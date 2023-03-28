@@ -1,38 +1,93 @@
-.App {
+a{
+  text-decoration: none;
+  color: currentColor
+}
+
+/* Create Blog Post Component */
+.create .heading{
   text-align: center;
+  font-size: 22px;
+  margin-top: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.createPost{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-width: 700px;
+  margin: 20px auto;
 }
 
-.App-link {
-  color: #61dafb;
+.createPost .title{
+  font-size: 20px;
+  margin: 10px 0px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px;
+  box-shadow: #F2EBE9 0px 1px 4px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.createPost .description{
+  font-size: 20px;
+  margin: 10px 0px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px;
+  box-shadow: #F2EBE9 0px 1px 4px;
+  height: 300px;
 }
+
+.createPost button{
+  font-size: 18px;
+  margin: 10px 0px;
+  padding: 15px 20px;
+  background-color: #5FD068;
+  border: 0px;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+
+/* Page Not Found  */
+.pageNotFound{
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+}
+
+.pageNotFound p {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 25px auto;
+}
+
+.pageNotFound img {
+  border-radius: 5px;
+  width: 100%;
+  margin: 15px auto;
+}
+
+.pageNotFound button{
+  border: 0px;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #1C59AE;
+  color: #ffffff;
+  cursor: pointer;
+}
+.mh-5{
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.mh-7{
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+.mh-20{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+

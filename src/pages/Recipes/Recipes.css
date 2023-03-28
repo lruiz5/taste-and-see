@@ -1,0 +1,102 @@
+.page-header{
+    font-size: 1.563rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+.filter-button{
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    color: rgb(17 24 39);
+    border-radius: 0.5rem;
+    border-color: transparent;
+}
+.filter-button:hover{
+    background-color: rgb(229 231 235);
+}
+
+.recipes-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+@media (min-width: 1024px) { 
+    .recipes-container{
+        flex-direction: row;
+    }
+}
+.w-6{
+    width: 1.5rem
+}
+.h-6{
+    height: 1.5rem;
+}
+
+/* margins */
+.mb-5{
+    margin-bottom: 1.25rem;
+}
+
+.flex{
+    display: flex;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+/* text */
+.text-sm{
+    font-size: 0.8rem
+} 
+.text-base{
+    font-size: 1rem
+} 
+.text-xl{
+    font-size: 1.25rem
+} 
+.text-2xl{
+    font-size: 1.563rem
+} 
+.text-3xl{
+    font-size: 1.953rem
+} 
+.text-4xl{
+    font-size: 2.441rem
+} 
+.text-5xl{
+    font-size: 3.052rem
+} 
+
+.font-thin{
+    font-weight: 100;
+}
+.font-extralight{
+    font-weight: 200;
+}
+.font-light{
+    font-weight: 300;
+}
+.font-normal{
+    font-weight: 400;
+}
+.font-medium{
+    font-weight: 500;
+}
+.font-semibold{
+    font-weight: 600;
+}
+.font-bold{
+    font-weight: 700;
+}
+.font-extrabold{
+    font-weight: 800;
+}
+.font-black{
+    font-weight: 900;
+}
