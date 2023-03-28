@@ -1,0 +1,55 @@
+header{
+    height: 70px;
+    padding: 10px;
+    border-bottom: 1px solid #F2EBE9;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .logo{
+    display: flex;
+    align-items: center;
+  }
+  .logo img{
+    max-width: 40px;
+  }
+  
+  .logo span{
+    font-size: 20px;
+    padding: 5px;
+    
+  }
+  .nav{
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav .link{
+    padding: 10px;
+  }
+  
+  .nav .link.active{
+    background-color: #F2EBE9;
+    border-radius: 5px;
+  }
+  
+  .nav .auth{
+    border: 0px;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #1C59AE;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .nav .auth i{
+    font-size: 14px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    .logo span{
+        display: none;
+    }
+  }
