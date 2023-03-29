@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { RecipeCard } from "../../components";
@@ -13,23 +13,24 @@ export const Recipes = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [recipes, setRecipes] = useState([]);
 
-  useEffect(() => {
-    const recipesRef = collection(db, "recipes");
-    async function getRecipes() {
-      const data = await getDocs(recipesRef);
+  const recipesRef = useRef(collection(db, "recipes"));
 
+  useEffect(() => {
+    async function getRecipes() {
+      const data = await getDocs(recipesRef.current);
+      console.log(data);
       setRecipes(
         data.docs.map((document) => ({ ...document.data(), id: document.id }))
       );
     }
     /* getRecipes(); */
-  }, []);
+  }, [recipesRef]);
 
   return (
     <main>
       <section className="mh-5">
         <div className="mh-5 flex justify-between">
-          <span className="page-header">All Recipes (0)</span>
+          <span className="page-header">All Recipes ({recipes.length})</span>
           <span>
             <button
               id="dropdownMenuIconButton"
