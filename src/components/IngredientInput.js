@@ -36,9 +36,9 @@ export const IngredientInput = () => {
   }
 
   return (
-    <div class="ingredient-container" id="ingredients">
-      <div class="ingredient flex-horoz">
-        <i class="bi bi-grip-vertical"></i>
+    <div className="ingredient-container" id="ingredients">
+      <div className="ingredient flex-horoz">
+        <i className="bi bi-grip-vertical"></i>
         <input type="text" placeholder="Ingredient" />
         <input type="text" placeholder="Amount" />
         <select>
@@ -52,12 +52,12 @@ export const IngredientInput = () => {
           <option value="whole">whole</option>
         </select>
         <i
-          class="bi bi-x-circle-fill"
+          className="bi bi-x-circle-fill"
           onClick={() => toast.error("You must have at least one ingredient.")}
         ></i>
       </div>
-      <div class="add-ingredients flex-horoz" onClick={() => addItem()}>
-        <i class="bi bi-plus-circle-fill"></i>
+      <div className="add-ingredients flex-horoz" onClick={() => addItem()}>
+        <i className="bi bi-plus-circle-fill"></i>
         <div>Ingredient</div>
       </div>
     </div>
