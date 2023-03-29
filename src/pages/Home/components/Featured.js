@@ -5,9 +5,9 @@ export const Featured = () => {
     <section className="mh-20">
       <h1 className="featured-title">Meg's Favorites</h1>
       <div className="featured-items-container">
+        {/* <RecipeCard />
         <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
+        <RecipeCard /> */}
       </div>
     </section>
   );

@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../../firebase/config";
 import { RecipeCard } from "../../components";
 import "./Recipes.css";
+
 /* import { FilterBar } from "./components/FilterBar"; */
 
 /* import { toast } from "react-toastify"; */
@@ -8,6 +11,19 @@ import "./Recipes.css";
 export const Recipes = () => {
   //const { products, initialProductList } = useFilter();
   const [showFilter, setShowFilter] = useState(false);
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    const recipesRef = collection(db, "recipes");
+    async function getRecipes() {
+      const data = await getDocs(recipesRef);
+
+      setRecipes(
+        data.docs.map((document) => ({ ...document.data(), id: document.id }))
+      );
+    }
+    /* getRecipes(); */
+  }, []);
 
   return (
     <main>
@@ -36,12 +52,9 @@ export const Recipes = () => {
         </div>
 
         <div className="recipes-container">
-          <RecipeCard />
-          <RecipeCard />
-          <RecipeCard />
-          <RecipeCard />
-          <RecipeCard />
-          <RecipeCard />
+          {recipes.map((recipe) => (
+            <RecipeCard key={recipe.id} recipe={recipe} />
+          ))}
         </div>
       </section>
       {/* {showFilter && <FilterBar setShowFilter={setShowFilter} />} */}
