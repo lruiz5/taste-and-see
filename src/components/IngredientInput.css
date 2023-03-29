@@ -1,0 +1,41 @@
+
+  
+  .ingredient-containter {
+    background: white;
+    padding: 16px;
+  }
+
+  i{
+    cursor: pointer;
+  }
+  
+  input {
+    border: none;
+    border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
+    transition: all 200ms;
+    padding-bottom: 0.2rem;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #FF5252;
+  }
+  
+  .flex-horoz {
+    display: flex;
+    flex-direction: row;
+    margin: 16px 0;
+    align-items: center;
+  }
+  .flex-horoz>* { margin: 0 8px; }
+  .flex-horoz>*:first-child { margin: 0 8px 0 0; }
+  .flex-horoz>*:last-child { margin: 0 0 0 8px; }
+  
+  .ingredient { margin: 16px 0; }
+  .ingredient>*:nth-child(1) { cursor: all-scroll; }
+  .ingredient>*:nth-child(2) { flex-grow: 10; width: 60px; }
+  .ingredient>*:nth-child(3) { flex-grow: 0.5; width: 45px; }
+  .ingredient>*:nth-child(4) { cursor: pointer; }
+  .ingredient input { flex-shrink: 1; }
+  
+  .add-ingredients { cursor: pointer; }
