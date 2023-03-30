@@ -3,10 +3,12 @@ import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { RecipeCard } from "../../components";
 import "./recipes.css";
+import { useTitle } from "../../hooks/useTitle";
 
 /* import { FilterBar } from "./components/FilterBar"; */
 
 export const Recipes = () => {
+  useTitle("Recipes");
   //const { recipes, initialRecipesList } = useFilter();
   const [showFilter, setShowFilter] = useState(false);
   const [recipes, setRecipes] = useState([]);

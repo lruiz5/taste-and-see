@@ -3,9 +3,11 @@ import { db } from "../../firebase/config";
 import { IngredientInput } from "../../components";
 import "./create.css";
 import { toast } from "react-toastify";
+import { useTitle } from "../../hooks/useTitle";
 
 export const Create = () => {
   const recipeRef = collection(db, "recipes");
+  useTitle("Create");
 
   const handleCreate = async (event) => {
     event.preventDefault();
