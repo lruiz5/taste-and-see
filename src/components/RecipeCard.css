@@ -120,10 +120,10 @@
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
-    margin-right: .5rem;
+    
   }
   .crud-icon.edit{
-    
+    margin-right: .5rem;
     background-color: #3f83c8;
     
   }
@@ -134,7 +134,7 @@
   }
   .icon-container{
     position: absolute;
-    bottom: 8px;
-    right: 0px;
+    bottom: .5rem;
+    right: 0;
   }
  
