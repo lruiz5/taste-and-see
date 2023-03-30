@@ -23,7 +23,7 @@ export const Recipes = () => {
       );
     }
     getRecipes();
-  }, [recipesRef]);
+  }, [recipesRef, toggle]);
 
   return (
     <main>
@@ -56,8 +56,7 @@ export const Recipes = () => {
             <RecipeCard
               key={recipe.id}
               recipe={recipe}
-              toggle={toggle}
-              setToggle={setToggle}
+              setToggle={() => setToggle(!toggle)}
             />
           ))}
         </div>
