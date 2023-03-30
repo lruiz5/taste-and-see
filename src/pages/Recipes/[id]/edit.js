@@ -4,8 +4,10 @@ import { doc, getDoc, serverTimestamp, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase/config";
 import "../create.css";
 import { toast } from "react-toastify";
+import { useTitle } from "../../../hooks/useTitle";
 
 export const RecipeEditor = () => {
+  useTitle("Recipe Editor");
   const params = useParams();
   const navigate = useNavigate();
   const [recipe, setRecipe] = useState({});
