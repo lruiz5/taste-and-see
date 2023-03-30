@@ -1,11 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import RecipeImage from "../assets/images/chicken-man.jpg";
 import "./RecipeCard.css";
 
 export const RecipeCard = (props) => {
   const { recipe } = props;
+  const navigate = useNavigate();
+  const isAuth = JSON.parse(localStorage.getItem("isAuth"));
   const poster =
     `https://source.unsplash.com/${recipe.image_path}/600x300` || RecipeImage;
+
   return (
     <div className="card">
       <div className="card_image">
@@ -35,6 +39,14 @@ export const RecipeCard = (props) => {
             more.
           </p> */}
         </div>
+        {isAuth && (
+          <div className="icon-container">
+            <span
+              onClick={() => navigate(`/recipes/${recipe.id}/edit`)}
+              className="bi bi-pencil-fill crud-icon edit"
+            ></span>
+          </div>
+        )}
       </div>
     </div>
   );

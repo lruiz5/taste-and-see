@@ -1,5 +1,6 @@
 export { Home } from "./Home/Home";
-export { Create } from "./Create";
+export { Create } from "./Recipes/create";
 export { NotFound } from "./NotFound";
-export { Recipes } from "./Recipes/Recipes";
-export { RecipeDetails } from "./RecipeDetails";
+export { Recipes } from "./Recipes/";
+export { RecipeEditor } from "./Recipes/[id]/edit";
+export { RecipeDetails } from "./Recipes/[id]";

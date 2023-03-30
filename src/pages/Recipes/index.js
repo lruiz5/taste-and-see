@@ -2,28 +2,27 @@ import { useEffect, useRef, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { RecipeCard } from "../../components";
-import "./Recipes.css";
+import "./recipes.css";
 
 /* import { FilterBar } from "./components/FilterBar"; */
 
-/* import { toast } from "react-toastify"; */
-
 export const Recipes = () => {
-  //const { products, initialProductList } = useFilter();
+  //const { recipes, initialRecipesList } = useFilter();
   const [showFilter, setShowFilter] = useState(false);
   const [recipes, setRecipes] = useState([]);
+  const [toggle, setToggle] = useState([]);
 
   const recipesRef = useRef(collection(db, "recipes"));
 
   useEffect(() => {
     async function getRecipes() {
       const data = await getDocs(recipesRef.current);
-      console.log(data);
+
       setRecipes(
         data.docs.map((document) => ({ ...document.data(), id: document.id }))
       );
     }
-    /* getRecipes(); */
+    getRecipes();
   }, [recipesRef]);
 
   return (
@@ -54,7 +53,12 @@ export const Recipes = () => {
 
         <div className="recipes-container">
           {recipes.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
+            <RecipeCard
+              key={recipe.id}
+              recipe={recipe}
+              toggle={toggle}
+              setToggle={setToggle}
+            />
           ))}
         </div>
       </section>
