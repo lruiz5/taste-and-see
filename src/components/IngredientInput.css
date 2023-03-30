@@ -33,9 +33,10 @@
   
   .ingredient { margin: 16px 0; }
   .ingredient>*:nth-child(1) { cursor: all-scroll; }
-  .ingredient>*:nth-child(2) { flex-grow: 10; width: 60px; }
-  .ingredient>*:nth-child(3) { flex-grow: 0.5; width: 45px; }
-  .ingredient>*:nth-child(4) { cursor: pointer; }
+  .ingredient>*:nth-child(2) { flex-grow: 10; }
+  .ingredient>*:nth-child(3) { flex-grow: 0.5;  }
+  .ingredient>*:nth-child(4) { flex-grow: 0.5;  width: 4rem;}
+  .ingredient>*:nth-child(5) { cursor: pointer; }
   .ingredient input { flex-shrink: 1; }
   
   .add-ingredients { cursor: pointer; }

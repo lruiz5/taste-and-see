@@ -1,5 +1,13 @@
 import { Route, Routes } from "react-router-dom";
-import { Home, Create, NotFound, Recipes, RecipeDetails } from "../pages";
+import {
+  Home,
+  Create,
+  NotFound,
+  Recipes,
+  RecipeDetails,
+  RecipeEditor,
+} from "../pages";
+
 import { ProtectedRoutes } from "./ProtectedRoutes";
 
 export const AllRoutes = () => {
@@ -14,6 +22,14 @@ export const AllRoutes = () => {
           element={
             <ProtectedRoutes>
               <Create />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/recipes/:id/edit"
+          element={
+            <ProtectedRoutes>
+              <RecipeEditor />
             </ProtectedRoutes>
           }
         />

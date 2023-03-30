@@ -57,7 +57,7 @@
     position: relative;
     padding: 16px 12px 32px 24px;
     margin: 16px 8px 8px 0;
-    max-height: 290px;
+    min-height: 275px;
     overflow-y: scroll;
   }
   
@@ -106,9 +106,35 @@
     margin: 0 0 24px;
     font-size: 14px;
     line-height: 1.5;
+    min-height: 10rem;
   }
   
   .card_text p:last-child {
     margin: 0;
   }
-  
+  .crud-icon{
+    padding: 4px 8px;
+    border-radius: 0.25rem;
+    background-color: #000;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-right: .5rem;
+  }
+  .crud-icon.edit{
+    
+    background-color: #3f83c8;
+    
+  }
+  .crud-icon.trash{
+    
+    background-color: #c83f3f;
+    
+  }
+  .icon-container{
+    position: absolute;
+    bottom: 8px;
+    right: 0px;
+  }
+ 
