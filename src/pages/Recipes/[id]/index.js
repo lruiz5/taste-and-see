@@ -14,11 +14,9 @@ export const RecipeDetails = () => {
 
   useEffect(() => {
     async function getRecipe() {
-      const response = await getDoc(recipeRef.current)
+      await getDoc(recipeRef.current)
         .then((data) => setRecipe({ ...data.data(), id: data.id }))
         .catch((err) => toast.error(`error: ${err}`));
-
-      !response.ok && toast.error(response.ok);
     }
     getRecipe();
   }, [params.id, recipeRef]);
