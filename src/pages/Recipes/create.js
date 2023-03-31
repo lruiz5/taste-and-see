@@ -1,6 +1,6 @@
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase/config";
-import { IngredientInput } from "../../components";
+import { IngredientInput, InstructionInput } from "../../components";
 import "./create.css";
 import { toast } from "react-toastify";
 import { useTitle } from "../../hooks/useTitle";
@@ -17,6 +17,7 @@ export const Create = () => {
       servings: parseInt(event.target.servings.value),
       image_path: event.target.image_path.value,
       ingredients: getIngredients(),
+      instructions: getInstructions(),
     };
     await addDoc(recipeRef, document)
       .then(() => {
@@ -36,19 +37,27 @@ export const Create = () => {
       document.getElementsByClassName("ingredient flex-horoz")
     );
 
-    ingredientsArray.forEach((item, index) => {
-      //create an object with all ingredient attributes
-      let currentIngredient = {
-        name: item.children.ingredient_name.value,
-        amount: item.children.ingredient_amt.value,
-        unit: item.children.ingredient_unit.value,
-      };
-
-      //add to full ingredients map
-      ingredients.push(currentIngredient);
+    ingredientsArray.forEach((item) => {
+      //add to ingredients list
+      ingredients.push(item.children.ingredient_name.value);
     });
-    console.log(ingredients);
+
     return ingredients;
+  };
+
+  const getInstructions = () => {
+    let instructions = [];
+    // get HTML Collection List and convert to array
+    const instructionsArray = Array.prototype.slice.call(
+      document.getElementsByClassName("instruction flex-horoz")
+    );
+
+    instructionsArray.forEach((item) => {
+      //add to instructions list
+      instructions.push(item.children.instruction_name.value);
+    });
+
+    return instructions;
   };
 
   return (
@@ -91,6 +100,7 @@ export const Create = () => {
           required
         />
         <IngredientInput />
+        <InstructionInput />
         <button type="submit" className="submit">
           Create
         </button>

@@ -32,6 +32,16 @@
   
   }
 
+  .createRecipe .instruction{
+    font-size: 20px;
+    margin: 10px 0px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: #F2EBE9 0px 1px 4px;
+  
+  }
+
 .createRecipe .description{
   font-size: 20px;
   margin: 10px 0px;

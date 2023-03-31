@@ -29,8 +29,8 @@ export const Recipes = () => {
 
   return (
     <main>
-      <section className="mh-5">
-        <div className="mh-5 flex justify-between">
+      <section className="my-5">
+        <div className="my-5 d-flex justify-content-between">
           <span className="page-header">All Recipes ({recipes.length})</span>
           <span>
             <button
@@ -41,7 +41,7 @@ export const Recipes = () => {
               type="button"
             >
               <svg
-                className="w-6 h-6"
+                className="filter-icon"
                 aria-hidden="true"
                 fill="currentColor"
                 viewBox="0 0 20 20"
