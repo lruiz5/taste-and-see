@@ -21,7 +21,15 @@ export const RecipeCard = (props) => {
     <div className="card">
       <div className="card_image">
         <Link to={`/recipes/${recipe.id}`}>
-          <span className="note">Meg's Fav!</span>
+          {recipe.tags?.map((tag) => {
+            return tag === "meg's pick" ? (
+              <span key={tag} className="note text-uppercase">
+                {tag}
+              </span>
+            ) : (
+              ""
+            );
+          })}
           <img src={poster} alt="recipe poster" />
           <span className="card_price">
             <span>$</span>9
