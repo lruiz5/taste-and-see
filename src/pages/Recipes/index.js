@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase/config";
-import { RecipeCard } from "../../components";
+import { RecipeCard, SkeletonCard } from "../../components";
 import "./Recipes.css";
 import { useTitle } from "../../hooks/useTitle";
 
@@ -11,7 +11,7 @@ export const Recipes = () => {
   useTitle("Recipes");
   //const { recipes, initialRecipesList } = useFilter();
   const [showFilter, setShowFilter] = useState(false);
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState(new Array(9).fill(false));
   const [toggle, setToggle] = useState([]);
 
   const recipesRef = useRef(collection(db, "recipes"));
@@ -54,13 +54,17 @@ export const Recipes = () => {
         </div>
 
         <div className="recipes-container">
-          {recipes?.map((recipe) => (
-            <RecipeCard
-              key={recipe.id}
-              recipe={recipe}
-              setToggle={() => setToggle(!toggle)}
-            />
-          ))}
+          {recipes?.map((recipe, index) =>
+            recipe ? (
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                setToggle={() => setToggle(!toggle)}
+              />
+            ) : (
+              <SkeletonCard key={index} />
+            )
+          )}
         </div>
       </section>
       {/* {showFilter && <FilterBar setShowFilter={setShowFilter} />} */}

@@ -3,8 +3,9 @@ import { db } from "../../../firebase/config";
 import { RecipeCard } from "../../../components";
 import "./Featured.css";
 import { useEffect, useRef, useState } from "react";
+import { SkeletonCard } from "../../../components/";
 export const Featured = () => {
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([false, false, false]);
 
   const recipesRef = useRef(collection(db, "recipes"));
 
@@ -29,9 +30,13 @@ export const Featured = () => {
     <section className="mh-20">
       <h1 className="featured-title">Meg's Favorites</h1>
       <div className="featured-items-container">
-        {recipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} />
-        ))}
+        {recipes.map((recipe, index) =>
+          recipe ? (
+            <RecipeCard key={recipe.id} recipe={recipe} />
+          ) : (
+            <SkeletonCard key={index} />
+          )
+        )}
       </div>
     </section>
   );
