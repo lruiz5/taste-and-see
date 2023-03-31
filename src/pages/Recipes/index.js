@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { RecipeCard } from "../../components";
-import "./recipes.css";
+import "./Recipes.css";
 import { useTitle } from "../../hooks/useTitle";
 
 /* import { FilterBar } from "./components/FilterBar"; */
@@ -54,7 +54,7 @@ export const Recipes = () => {
         </div>
 
         <div className="recipes-container">
-          {recipes.map((recipe) => (
+          {recipes?.map((recipe) => (
             <RecipeCard
               key={recipe.id}
               recipe={recipe}

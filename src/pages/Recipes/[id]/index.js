@@ -51,9 +51,11 @@ export const RecipeDetails = () => {
               <h3 className="lead ">{recipe.description}</h3>
             </div>
             <div className="m-auto">
-              <p>Prep Time: 1hr</p>
-              <p>Cook Time: 2hr</p>
-              <p className="fw-bold">Total Time: 3hr</p>
+              <p>Prep Time: {recipe.prep_time || "0 min"}</p>
+              <p>Cook Time: {recipe.cook_time || "0 min"}</p>
+              <p className="fw-bold">
+                Total Time: {recipe.total_time || "0 min"}
+              </p>
             </div>
           </div>
           <div className="d-flex justify-content-between mb-3 ">
@@ -101,11 +103,9 @@ export const RecipeDetails = () => {
         <div className="fst-italic rounded bg-light p-3">
           <p className="lead font-bold">Notes:</p>
           <div>
-            <p>
-              Do not add cocoa powder until the milk is completely heated to
-              avoid large, unbreakable clumps from forming.
-            </p>
-            <p>Do not allow milk to boil; this will ruin the flavor.</p>
+            {recipe.notes?.map((note, index) => (
+              <p key={index}>{note}</p>
+            ))}
           </div>
         </div>
       </section>
