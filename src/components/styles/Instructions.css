@@ -1,4 +1,4 @@
-.ingredient-containter {
+  .instruction-containter {
     background: white;
     padding: 16px;
   }
@@ -29,12 +29,12 @@
   .flex-horoz>*:first-child { margin: 0 8px 0 0; }
   .flex-horoz>*:last-child { margin: 0 0 0 8px; }
   
-  .ingredient { margin: 16px 0; }
-  .ingredient>*:nth-child(1) { cursor: all-scroll; }
-  .ingredient>*:nth-child(2) { flex-grow: 10; }
-  .ingredient>*:nth-child(3) { flex-grow: 0.5;  }
-  .ingredient>*:nth-child(4) { flex-grow: 0.5;  width: 4rem;}
-  .ingredient>*:nth-child(5) { cursor: pointer; }
-  .ingredient input { flex-shrink: 1; }
+  .instruction { margin: 16px 0; }
+  .instruction>*:nth-child(1) { cursor: all-scroll; }
+  .instruction>*:nth-child(2) { flex-grow: 10; }
+  .instruction>*:nth-child(3) { flex-grow: 0.5;  }
+  .instruction>*:nth-child(4) { flex-grow: 0.5;  width: 4rem;}
+  .instruction>*:nth-child(5) { cursor: pointer; }
+  .instruction input { flex-shrink: 1; }
   
-  .add-ingredients { cursor: pointer; }
+  .add-instructions { cursor: pointer; }

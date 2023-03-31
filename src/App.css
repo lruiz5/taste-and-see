@@ -2,37 +2,10 @@ a{
   text-decoration: none;
   color: currentColor
 }
-
-
-/* Page Not Found  */
-.pageNotFound{
-  text-align: center;
-  max-width: 500px;
-  margin: auto;
+a:hover{
+  color: currentColor;
 }
 
-.pageNotFound p {
-  font-size: 24px;
-  font-weight: 500;
-  margin: 25px auto;
-}
-
-.pageNotFound img {
-  border-radius: 5px;
-  width: 100%;
-  margin: 15px auto;
-}
-
-.pageNotFound button{
-  border: 0px;
-  border-radius: 5px;
-  margin-left: 10px;
-  padding: 10px 20px;
-  font-size: 20px;
-  background-color: #1C59AE;
-  color: #ffffff;
-  cursor: pointer;
-}
 .mh-5{
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
