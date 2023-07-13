@@ -100,11 +100,7 @@ export const RecipeDetails = () => {
         </div>
         <div className="fst-italic rounded bg-light p-3">
           <p className="lead font-bold">Notes:</p>
-          <div>
-            {recipe.notes?.map((note, index) => (
-              <p key={index}>{note}</p>
-            ))}
-          </div>
+          <div>{recipe.notes}</div>
         </div>
       </section>
     </main>
