@@ -9,6 +9,10 @@ export const Create = () => {
   const recipeRef = collection(db, "recipes");
   useTitle("Create");
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const handleCreate = async (event) => {
     event.preventDefault();
     const document = {
@@ -18,6 +22,9 @@ export const Create = () => {
       image_path: event.target.image_path.value,
       ingredients: getIngredients(),
       instructions: getInstructions(),
+      prep_time: event.target.prep_time.value,
+      cook_time: event.target.cook_time.value,
+      notes: event.target.notes.value,
     };
     await addDoc(recipeRef, document)
       .then(() => {
@@ -26,6 +33,10 @@ export const Create = () => {
         event.target.description.value = "";
         event.target.servings.value = "";
         event.target.image_path.value = "";
+        event.target.prep_time.value = "";
+        event.target.cook_time.value = "";
+        event.target.notes.value = "";
+        handleScrollToTop();
       })
       .catch((err) => toast.error(`Unable to create recipe: ${err}`));
   };
@@ -78,7 +89,7 @@ export const Create = () => {
           name="description"
           className="description"
           cols="30"
-          rows="10"
+          rows="5"
           placeholder="Description"
           maxLength={"500"}
           required
@@ -101,6 +112,31 @@ export const Create = () => {
         />
         <IngredientInput />
         <InstructionInput />
+
+        <input
+          type="text"
+          className="textinput"
+          name="prep_time"
+          placeholder="Prep Time (min.)"
+          maxLength={"9"}
+          required
+        />
+        <input
+          type="text"
+          className="textinput"
+          name="cook_time"
+          placeholder="Cook Time (min.)"
+          maxLength={"9"}
+          required
+        />
+        <textarea
+          name="notes"
+          className="textinput"
+          cols="30"
+          rows="5"
+          placeholder="Notes..."
+          maxLength={"500"}
+        ></textarea>
         <button type="submit" className="submit">
           Create
         </button>
