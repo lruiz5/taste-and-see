@@ -5,6 +5,7 @@ import { db } from "../../../firebase/config";
 import "../create.css";
 import { toast } from "react-toastify";
 import { useTitle } from "../../../hooks/useTitle";
+import { IngredientInput } from "../../../components";
 
 export const RecipeEditor = () => {
   useTitle("Recipe Editor");
@@ -23,13 +24,16 @@ export const RecipeEditor = () => {
       description: event.target.description.value,
       servings: parseInt(event.target.servings.value),
       image_path: event.target.image_path.value,
+      prep_time: event.target.prep_time.value,
+      cook_time: event.target.cook_time.value,
+      notes: event.target.notes.value,
       updatedAt: serverTimestamp(),
     };
 
     await updateDoc(recipeRef, updatedDoc)
       .then(() => {
         toast.success("Recipe Updated.");
-        setTimeout(() => navigate("/recipes"), 300);
+        setTimeout(() => navigate(`/recipes/${params.id}`), 300);
       })
       .catch((err) => toast.error(`Unable to update recipe: ${err}`));
   };
@@ -97,6 +101,36 @@ export const RecipeEditor = () => {
           required
         />
 
+        <input
+          type="text"
+          className="textinput"
+          name="prep_time"
+          placeholder="Prep Time (min.)"
+          maxLength={"9"}
+          value={recipe.prep_time || ""}
+          required
+          onChange={handleEdit}
+        />
+        <input
+          type="text"
+          className="textinput"
+          name="cook_time"
+          placeholder="Cook Time (min.)"
+          maxLength={"9"}
+          value={recipe.cook_time || ""}
+          required
+          onChange={handleEdit}
+        />
+        <textarea
+          name="notes"
+          className="textinput"
+          cols="30"
+          rows="5"
+          placeholder="Notes..."
+          maxLength={"500"}
+          value={recipe.notes || ""}
+          onChange={handleEdit}
+        ></textarea>
         <button type="submit" className="submit">
           Submit
         </button>
