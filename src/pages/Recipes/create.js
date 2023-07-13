@@ -4,8 +4,10 @@ import { IngredientInput, InstructionInput } from "../../components";
 import "./create.css";
 import { toast } from "react-toastify";
 import { useTitle } from "../../hooks/useTitle";
+import { useNavigate } from "react-router-dom";
 
 export const Create = () => {
+  const navigate = useNavigate();
   const recipeRef = collection(db, "recipes");
   useTitle("Create");
 
@@ -27,7 +29,8 @@ export const Create = () => {
       notes: event.target.notes.value,
     };
     await addDoc(recipeRef, document)
-      .then(() => {
+      .then((response) => {
+        console.log(response.id);
         toast.success("Recipe created.");
         event.target.name.value = "";
         event.target.description.value = "";
@@ -36,6 +39,10 @@ export const Create = () => {
         event.target.prep_time.value = "";
         event.target.cook_time.value = "";
         event.target.notes.value = "";
+
+        //TODO: clear ingredients / instructions
+        navigate(`/recipes/${response.id}`);
+
         handleScrollToTop();
       })
       .catch((err) => toast.error(`Unable to create recipe: ${err}`));
