@@ -4,8 +4,7 @@ import { db } from "../../firebase/config";
 import { RecipeCard, SkeletonCard } from "../../components";
 import "./Recipes.css";
 import { useTitle } from "../../hooks/useTitle";
-
-/* import { FilterBar } from "./components/FilterBar"; */
+import { FilterBar } from "../../components";
 
 export const Recipes = () => {
   useTitle("Recipes");
@@ -28,7 +27,7 @@ export const Recipes = () => {
   }, [recipesRef, toggle]);
 
   return (
-    <main>
+    <>
       <section className="my-5">
         <div className="my-5 d-flex justify-content-between">
           <span className="page-header">All Recipes ({recipes.length})</span>
@@ -66,8 +65,8 @@ export const Recipes = () => {
             )
           )}
         </div>
+        {showFilter && <FilterBar setShowFilter={setShowFilter} />}
       </section>
-      {/* {showFilter && <FilterBar setShowFilter={setShowFilter} />} */}
-    </main>
+    </>
   );
 };

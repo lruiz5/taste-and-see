@@ -9,7 +9,7 @@ export const NotFound = () => {
   useTitle("404: Oops!");
 
   return (
-    <main>
+    <>
       <h1 className="not-found-header">Yikes!</h1>
       <h2 className="not-found-subheader">
         I'm thinking this isn't where you wanted to be.
@@ -23,6 +23,6 @@ export const NotFound = () => {
           Go Home
         </Link>
       </div>
-    </main>
+    </>
   );
 };
