@@ -1,0 +1,167 @@
+
+.filterContainer{
+    position: fixed;
+    z-index: 40;
+    height: 100vh;
+    padding: 1.25rem 1.25rem 0 1.25rem;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 1);
+    width: 18rem;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    left:0;
+    top:0;
+    transition-property: none;
+}
+.filterHeader{
+    font-size: 1rem; /* 16px */
+    line-height: 1.5rem; /* 24px */
+    font-weight: 600;
+    color: rgb(107 114 128);
+    text-transform: uppercase;
+}
+.filterCloseBtn{
+    background-color: transparent;
+    position: absolute;
+    color: rgb(156 163 175);
+    border-radius: 0.5rem; /* 8px */
+    border-color: transparent;
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+    padding: 0.375rem; /* 6px */
+    top: 0.625rem; /* 10px */
+    right: 0.625rem; /* 10px */
+    display: inline-flex;
+    align-items: center;
+}
+.filterCloseBtn:hover{
+    color: rgb(17 24 39);
+    background-color: rgb(229 231 235);
+
+}
+.filterDivider{
+    border-bottom: 1px solid rgb(229 231 235);
+    padding-bottom: 0.75rem;
+}
+.filterBodyContainer{
+    padding: 1rem 0; /* 16px */
+    overflow-y: auto;
+}
+.filterList{
+    list-style-type: none;
+    color: rgb(51 65 85); /* text-slate-700 */
+}
+.filterListItem{
+    margin: 0.25rem 0 1.25rem 0; /* 4px */
+}
+.filterListItemContainer{
+    display: flex;
+    align-items: center;
+    margin: 0.25rem 0; /* 4px */
+}
+.filterListHeader{
+    font-weight: 600;
+}
+.filterCheckboxInput{
+    width: 1rem;
+    height: 1rem;
+    color: rgb(37 99 235);
+    background-color: rgb(243 244 246);
+    border-radius: 0.25rem; /* 4px */
+    border-color: rgb(209 213 219);
+}
+.filterRadioInput{
+    width: 1rem;
+    height: 1rem;
+    color: rgb(37 99 235);
+    background-color: rgb(243 244 246);
+    border-color: rgb(209 213 219);
+}
+.filterRadioLabel{
+    margin-left: 0.5rem; /* 8px */
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+    font-weight: 500;
+    color: rgb(17 24 39);
+}
+.filterClearBtn{
+    color: rgb(17 24 39);
+    background-color: rgb(255 255 255);
+    border: 1px solid rgb(209 213 219);
+    font-weight: 500;
+    border-radius: 0.5rem; /* 8px */
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 0.625rem; /* 10px */
+    padding-bottom: 0.625rem; /* 10px */
+    margin: 0 0.5rem 0.5rem 0; /* 8px */
+
+}
+.filterClearBtn:hover{
+    background-color: rgb(243 244 246);
+}
+.filterClearBtn:focus{
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow:  0 0 0 calc(4px + var(0px)) rgb(229 231 235);
+}
+
+.bg-transparent{
+    background-color: transparent;
+}
+
+.w4{
+    width: 1rem;
+}
+.w-5{
+    width: 1.25rem;
+}
+.h-4{
+    height: 1rem;
+}
+.h-5{
+    height: 1.25rem;
+}
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+.border{
+    border-width: 1px;
+}
+
+.px-1{
+    padding-left: .25rem;
+    padding-right: .25rem;
+}
+
+.px-10{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.py-25{
+    padding-top: 0.625rem; /* 10px */
+padding-bottom: 0.625rem; /* 10px */
+}
+
+.mt-1{
+    margin-top: 0.25rem; /* 4px */
+}
+.mb-5{
+    margin-bottom: 1.25rem; /* 20px */
+}
+.my-1{
+    margin-top: 0.25rem; /* 4px */
+    margin-bottom: 0.25rem; /* 4px */
+}

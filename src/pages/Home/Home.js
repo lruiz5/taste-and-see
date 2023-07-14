@@ -4,9 +4,9 @@ import { Featured, Hero } from "./components";
 export const Home = () => {
   useTitle("Home");
   return (
-    <main>
+    <>
       <Hero />
       <Featured />
-    </main>
+    </>
   );
 };
