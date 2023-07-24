@@ -26,6 +26,19 @@ export const Recipes = () => {
     getRecipes();
   }, [recipesRef, toggle]);
 
+  recipes.sort((a, b) => {
+    let fa = a.name,
+      fb = b.name;
+
+    if (fa < fb) {
+      return -1;
+    }
+    if (fa > fb) {
+      return 1;
+    }
+    return 0;
+  });
+
   return (
     <>
       <section className="my-5">
